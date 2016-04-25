@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 2</title>
+</head>
+<body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+
+	var get_sentence = function(){
+		$('body').append('<p>' + ((Math.ceil(Math.random() * 10) <= 5) ? 'This is sentence 1' : 'This is sentence 2.') + '</p>');
+	};
+
+	var i = 1
+
+	do {
+		get_sentence();
+		i++
+	} while (i <= 10)
+
+	//Statistical likelyhood is 50%.
+
+	</script>
+</body>
+</html>
