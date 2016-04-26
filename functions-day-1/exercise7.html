@@ -4,6 +4,25 @@
 	<title>Exercise 7</title>
 </head>
 <body>
+	<div id='output'></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
 
+	var this_that = function(word1, word2, count_up_to, fizz_num, buzz_num){
+		var num = 1;
+		while ( num <= ( count_up_to || 100) ) {
+			var modulo = "";
+			if ( num % ( fizz_num || 3 ) === 0) {
+				modulo += word1;
+			};	
+			if ( num % ( buzz_num || 5 ) === 0 ) {
+				modulo += word2;
+			};
+
+			isNaN(modulo) ? $('#output').append('<div>' + modulo + '</div>') : $('#output').append('<div>' + num + '</div>');
+			num++;
+		}
+	};
+</script>
 </body>
 </html>

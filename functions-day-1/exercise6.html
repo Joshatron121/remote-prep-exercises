@@ -1,27 +1,28 @@
 <html>
 <head>
+	<title>Exercise 6</title>
 </head>
 <body>
 
 <script>
 
-var factor_of_n = function(num){
-	var results = num;
-	while ( num > 2 ) {
-		results = results * (num - 1);
-		num--;
+	var factor_of_n = function(num){
+		var results = num;
+		while ( num > 2 ) {
+			results = results * (num - 1);
+			num--;
+		};
+
+		return results;
 	};
 
-	return results;
-};
-
-var count_by_n = function(count_by, count_up_to) {
-	var i = 0;
-	while ( i < count_up_to ) {
-		i += count_by;
-		console.log(i);
-	}
-};
+	var count_by_n = function(count_by, count_up_to) {
+		var i = 0;
+		while ( i < count_up_to ) {
+			i += count_by;
+			console.log(i);
+		};
+	};
 
 </script>
 </body>
