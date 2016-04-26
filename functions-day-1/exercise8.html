@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 8</title>
+</head>
+<body>
+
+	<script>
+		var fibonnaci = function(num){
+			var valueOne = 0;
+			var valueTwo = 1;
+			var valueSum = null;
+			var counter = 2
+			
+			while ( valueSum <= num ) {
+				valueSum = valueOne + valueTwo;
+				valueOne = valueSum;
+				counter++;
+				
+
+				if (valueSum === counter) {
+					return counter;
+					break;
+				}
+
+				
+			}
+		}
+	</script>
+</body>
+</html>
