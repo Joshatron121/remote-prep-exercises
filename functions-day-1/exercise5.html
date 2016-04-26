@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 5</title>
+</head>
+<body>
+	<div id='output'></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+
+		var string_printer = function(string) {
+			$('#output').text('<div>' + string + '</div>');
+		}
+
+		var funny_sentence = function() {
+			$('#output').append('<div>The man <span style="color:blue;">' + (Math.ceil(Math.random() * 10) <= 5 ? 'deceptively' : 'stupendiferously') + '</span> <span style="color:red;">'+ (Math.ceil(Math.random() * 10) <= 5 ? 'puked' : 'drove like Fred Flinstone') + '</span> to the <span style="color:green;">' + (Math.ceil(Math.random() * 10) <= 5 ? 'fantastic' : 'stupid') + '</span> <span style="color:purple;">' + (Math.ceil(Math.random() * 10) <= 5 ? 'car-port' : 'princess castle') + '</span>.</div>');
+		}
+		funny_sentence();
+		funny_sentence();
+		funny_sentence();
+		funny_sentence();
+		funny_sentence();
+
+	</script>
+</body>
+</html>
