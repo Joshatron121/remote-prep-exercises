@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+
+<script>
+
+var factor_of_n = function(num){
+	var results = num;
+	while ( num > 2 ) {
+		results = results * (num - 1);
+		num--;
+	};
+
+	return results;
+};
+
+var count_by_n = function(count_by, count_up_to) {
+	var i = 0;
+	while ( i < count_up_to ) {
+		i += count_by;
+		console.log(i);
+	}
+};
+
+</script>
+</body>
+</html>
