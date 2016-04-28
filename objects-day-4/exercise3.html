@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 3</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var car = {
+		make: "Toyota",
+	};
+
+	car["model"] = "Camry";
+	car["model"];
+	car.model;
+
+	car.model = "Prius";
+	car["model"];
+	car.model;
+
+	var prop = 'year';
+	//how can we set the car's year using the variable prop?
+
+	car[prop] = 1992;
+
+	// console.log(car[prop]);
+	car.prop = 1992;
+
+	// console.log(car.prop);
+
+	var dream_car = {};
+
+	dream_car.make = 'Ford';
+	dream_car.model = 'F-150';
+	dream_car.color = 'black';
+	dream_car.year = 1996;
+	dream_car.registered = true;
+
+	console.log(dream_car);
+
+
+
+</script>
+</body>
+</html>

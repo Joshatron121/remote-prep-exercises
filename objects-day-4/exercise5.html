@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 5</title>
+</head>
+<body>
+	<div class="cat"></div>
+	<div class="car"></div>
+	<div class="life"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+
+		var my_cat = {};
+		my_cat.name = 'Schroedinger';
+		my_cat.age = 20;
+		my_cat.alive = false;
+		my_cat.favorite_toy = 'Slinky';
+		my_cat.napping_spot = 'Sun';
+		my_cat.favorite_food = 'Sushi';
+		my_cat.least_fav_animal = 'dog';
+
+		for (var one in my_cat) {
+			if (this.one === 'color') {
+				$('.cat').append('<p>' + my_cat[this.one] + '</p>');
+			}
+			if (my_cat[this.one] === 'Ford')
+				$('.cat').append('<p>' + this.one + '</p>');
+			}
+			if (this.one === 'greeting') {
+				$('.cat').append('<p>' + my_cat[this.one] + '</p>')
+			}
+			
+		}
+
+		var dream_car = {};
+		dream_car.make = 'Ford';
+		dream_car.model = 'F-150';
+		dream_car.color = 'red';
+		dream_car.year = 1996;
+		dream_car.registered = true;
+
+
+		for (var two in dream_car) {
+			if (this.two === 'color') {
+				$('.car').append('<p>' + dream_car[this.two] + '</p>');
+			}
+
+
+			if (dream_car[this.two] === 'Ford')
+				$('.car').append('<p>' + this.two + '</p>');
+			}
+		}
+
+		var my_dream_life = {};
+		var property_key = 'job';
+		my_dream_life[property_key] = 'software engineer';
+		var another_property_key = 97000;
+		my_dream_life.valueoflife = another_property_key;
+		var next_property = 'car';
+		my_dream_life[next_property] = 'BMW';
+		property_key = 'house';
+		my_dream_life[property_key] = 'good house';
+		property_key = 'boat';
+		my_dream_life[property_key] = 'good boat';
+		property_key = 'vacation';
+		my_dream_life[property_key] = 'hawaii';
+
+		for (var three in my_dream_life) {
+			if (this.three === 'color') {
+				$('.life').append('<p>' + dream_car[this.three] + '</p>');
+			}
+			if (my_dream_life[this.two] === 'Ford')
+				$('.life').append('<p>' + this.three + '</p>');
+			}
+		}
+
+		var target_key = 'greeting';
+	</script>
+</body>
+</html>
