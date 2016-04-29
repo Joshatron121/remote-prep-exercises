@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 11</title>
+</head>
+<body>
+<div id="primative_data_types"></div>
+<div id="array_values"></div>
+<div id="object_values"></div>
+<div id="function_values"></div>
+<div id="bob"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+
+var complex_object = {
+	string: "I'm a string!",
+	number: 42,
+	array: ["All sorts of stuff", 10, true, undefined, {me: "an object", more: "find me in here"}, function(){console.log('beepity-beep')}],
+	simple_object: {name: 'bob', location: 'basement'},
+	fn: function() {
+		console.log("fn has been invoked! Checking both kinds of invocation-time inputs...");
+		console.log("what is my calling context?", this);
+		console.log("what are my arguments?", arguments);
+	}
+};
+
+complex_object.string;
+complex_object.array[4];
+complex_object.simple_object.name;
+complex_object.fn("stuff", "more stuff", "even more stuff");
+
+$('#primative_data_types').append('<p>String Value: ' + complex_object.string + '</p><p>Number Value: ' + complex_object.number + '</p>');
+
+for (var i = 0; i < complex_object.array.length; i++) {
+	if (typeof complex_object.array[i] === 'object') {
+		$('#object_values').append('<p>Object Values:</p><ul></ul>');
+		console.log(i)
+		for (var key in complex_object.array[i]) {
+			console.log(complex_object.array[i]);
+			console.log(i)
+			$('#object_values > ul').append('<li>' + this.key + ': ' +complex_object.array[i][this.key] + '</li>');
+			// console.log(complex_object.array[i].key)
+		}
+	} else if (typeof complex_object.array[i] === 'function') {
+		$('#function_values').append('<p> Function Values: ' + complex_object.array[i] + '</p>');
+	} else {
+		$('#array_values').append('<p>Array Value ' + i + ': ' + complex_object.array[i] + '</p>');
+	}
+}
+
+$('#bob').append('<p>Name: ' + complex_object.simple_object.name + '</p> <p>Location: ' + complex_object.simple_object.location + '</p>')
+
+complex_object.array[5]();
+
+</script>
+</body>
+</html>

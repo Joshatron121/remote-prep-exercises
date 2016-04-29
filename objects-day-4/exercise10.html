@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 10</title>
+</head>
+<body>
+
+	<script>
+		var type = '';
+		var type_tester = function(input) {
+			console.log(input);
+			return Array.isArray(input) === true ? 'array' : typeof input;
+			
+		}
+
+		type_tester(3);
+		type_tester('hello');
+		type_tester({});
+		type_tester([]);
+
+	</script>
+</body>
+</html>

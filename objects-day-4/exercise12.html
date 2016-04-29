@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 12</title>
+</head>
+<body>
+
+<script>
+var them_dogs = [{
+	name: 'Henry',
+	age: 0.5,
+	breed: 'Aussie',
+	food: 'kibble',
+	toys: ['tennis ball', 'chew toy'],
+	picture: 'http://rubyriverminiaustralianshepherds.com/wp-content/uploads/aussie-puppy-for-sale-940x412.jpg'
+}, {
+	name: 'Tilly',
+	age: 5,
+	breed: 'Mutt',
+	food: 'kibble',
+	toys: ['bone', 'kong', 'squeaky toy'],
+	picture: 'http://www.dogchannel.com/images/zones/top_promo/excited-mixed-breed.jpg'
+}, {
+	name: 'Apollo',
+	age: 10,
+	breed: 'Labrador',
+	food: 'absolutely anything',
+	toys: ['old sock', 'other old sock', 'more old sock'],
+	picture: 'http://media.cmgdigital.com/shared/img/photos/2014/08/01/5a/66/LadyLabrador.jpg'
+}];
+
+var all_toys = [];
+
+for (var i = 0; i < them_dogs.length; i++) {
+	for (var key in them_dogs[i]) {
+		if (Array.isArray(them_dogs[i][this.key])) {
+			for (var j = 0; j < them_dogs[i][this.key].length; j++)
+				all_toys.push(them_dogs[i][this.key][j]);
+		}
+	}
+}
+
+var toyLocator = function(dogs, toy){
+	for (var k = 0; k < dogs.length; k++) {
+		for (var keyTwo in dogs[k]) {
+			console.log(dogs[k][dogs.keyTwo])
+			if(Array.isArray(dogs[k][dogs.keyTwo])) {
+				for (var l = 0; l < dogs[k][dogs.keyTwo].length; l++)
+					if (dogs[k][dogs.keyTwo][l] === toy) {
+						return dogs[k].name
+				}
+			}
+		}
+	}
+}
+
+
+</script>
+
+</body>
+</html>
