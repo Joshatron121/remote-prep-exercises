@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Exercise 12</title>
+	<title>Exercise 12(DogBook)</title>
+	<style>
+		img {
+			width: 40%;;
+		}
+	</style>
 </head>
 <body>
+<div class="container">
+	<h1>DogBook!</h1>
 
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script>
 var them_dogs = [{
 	name: 'Henry',
@@ -43,10 +52,9 @@ for (var i = 0; i < them_dogs.length; i++) {
 var toyLocator = function(dogs, toy){
 	for (var k = 0; k < dogs.length; k++) {
 		for (var keyTwo in dogs[k]) {
-			console.log(dogs[k][dogs.keyTwo])
-			if(Array.isArray(dogs[k][dogs.keyTwo])) {
-				for (var l = 0; l < dogs[k][dogs.keyTwo].length; l++)
-					if (dogs[k][dogs.keyTwo][l] === toy) {
+			if(Array.isArray(dogs[k][keyTwo])) {
+				for (var l = 0; l < dogs[k][keyTwo].length; l++)
+					if (dogs[k][keyTwo][l] === toy) {
 						return dogs[k].name
 				}
 			}
@@ -54,8 +62,19 @@ var toyLocator = function(dogs, toy){
 	}
 }
 
+for (var j = 0; j < them_dogs.length; j++){
+	for (var keyThree in them_dogs[j]){
+		if (keyThree === 'picture') {
+			$('.container').append('<div class=\'' + them_dogs[j].name + keyThree + '\'><p>PICTURE:</p><img src=\'' + them_dogs[j][this.keyThree] + '\'></div>')
+		} else if (keyThree === 'toys') {
+			$('.container').append('<div class=\'' + them_dogs[j].name + keyThree + '\'><p>' + keyThree.toUpperCase() + ': ' + them_dogs[j][this.keyThree].join(', ') + '\</p></div>')
+		} else {
+			$('.container').append('<div class=\'' + them_dogs[j].name + keyThree + '\'><p>' + keyThree.toUpperCase() + ': ' + them_dogs[j][this.keyThree] + '</p></div>')	
+		}
+	}
+}
+
 
 </script>
-
 </body>
 </html>

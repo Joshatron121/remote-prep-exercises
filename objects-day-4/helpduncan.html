@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.array{
+		background-color: orange;
+	}
+	.justO{
+		background-color: blue;
+	}
+	.smallO{
+		background-color: pink;
+	}
+</style>
+<body>
+	<div id="array_values">
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>		
+<script type="text/javascript">
+
+	var complex_object = {
+		string: "I'm a string!",
+		number: 42,
+		array: ["all sorts of stuff", 10, true, undefined, {me: "an object", more: "find me in here!"}, function(){console.log('beepity-beep')}],
+		simple_object: {name: 'bob', location:'basement'},
+		fn: function(){
+			console.log("fn has been invoked! Checking both kinds of invocation-time inputs...");
+			console.log("what is my calling context?", this);
+			console.log("what are my arguments?", arguments);
+		}
+	};
+	console.log(complex_object.simple_object.name);
+	// complex_object.string;
+	// complex_object.array[4];
+	// complex_object.simple_object.name;
+	// complex_object.fn("stuff", "more stuff", "even more stuff!");
+
+	$(document).ready(function(){
+		// $('body').append('<div id="primitive_data_types">' + complex_object.string + ' ' +complex_object.number + '</div>');
+		$('#array_values').append('<ul>');
+		for(var property in complex_object){
+
+			//checks for an object
+			if(typeof complex_object[property] === 'object' && Array.isArray(complex_object[property]) === false){
+				
+				for(var key in complex_object[property]){
+
+					$('#array_values').append('<li class="smallO">' + complex_object[property]/*here!!!*/ + '</li>');
+				}
+			//checks for arrays	
+			}else if(Array.isArray(complex_object[property]) === true){
+				//loops through the arr
+				for(var i = 0; i < complex_object[property].length; i++){
+					//looks for normal array values
+					if(typeof complex_object[property][i] != 'object'){
+	
+						$('#array_values').append('<li class="array">' + complex_object[property][i] + '</li>');
+						//looks for objects inside the array	
+						}else if(typeof complex_object[property][i] === 'object'){
+							
+							for(var key in complex_object[property][i]){
+
+								$('#array_values').append('<li class="array">' + key/*here!!!*/ + '</li>');
+
+						}
+							//checks for functions in the array	
+							}else if(typeof complex_object[property][i] === 'function'){
+								console.log('b');/*can't seem to make is identify the function?!!!*/
+							}
+				}
+			//checks for functions in complex_object		
+			}else if(typeof complex_object[property] === 'function'){
+
+				complex_object[property]("one", "two", "three");
+
+			}else{
+
+				$('#array_values').append('<li class="justO">' + complex_object[property] + '</li>');
+			}
+
+		$('#array_values').append('</ul>');	
+		
+		}
+	});
+
+</script>
+</body>
+</html>
