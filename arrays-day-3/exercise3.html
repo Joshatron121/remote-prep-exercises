@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 3</title>
+</head>
+<body>
+
+	<div id="bucket_list_output">
+		<h1>My Bucket List</h1>
+	</div>
+	<div id="recipe_output">
+		<h1>My Favorite Recipe</h1>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+
+	var recipe = [];
+	recipe[0] = 'boil water';
+	recipe[1] = 'place crab in boiling water';
+	recipe[2] = 'add crab boil and other spices';
+	recipe[3] = 'melt 1 stick of butter in microwave, or melt on stove and place into dish';
+	recipe[4] = 'after crab has boiled, remove it from pot and place on plate';
+	recipe[5] = 'place butter onto plate and enjoy!';
+
+	var bucket_list = [];
+	bucket_list[0] = 'get a job as a software engineer';
+	bucket_list[1] = 'visit another country';
+	bucket_list.push('live a good life');
+	bucket_list.push('learn russian');
+	bucket_list.unshift('be a valuable employee');
+	bucket_list.unshift('provide for my family');
+
+	// 1. Use a while loop and jQuery to append each item in your recipe and your bucket list onto a webpage
+
+	// var i = 0;
+
+	// while (i < recipe.length) {
+	// 	$('#recipe_output').append('<p>' + (i + 1) + ': ' + recipe[i] + '</p>');
+	// 	i++
+	// }
+
+	// var j = 0;
+	// while (j < bucket_list.length) {
+	// 	$('#bucket_list_output').append('<p>' + (j + 1) + ': ' + bucket_list[j] + '</p>');
+	// 	j++
+	// }
+	// 2. Refactor your code such that the while loop lives insid ea function called append_strings that takes ana rray as an input (argument)
+
+	// var outputToPage = function(array){
+	// 	var i = 0;
+
+	// 	if(array[0] === 'boil water') {
+	// 		var target = '#recipe';
+	// 	} else {
+	// 		var target = '#bucket_list';
+	// 	}
+
+	// 	while (i < array.length) {
+	// 		$(target + '_output').append('<p>' + (i + 1) + ': ' + array[i] + '</p>');
+	// 		i++
+	// 	}
+	// }
+
+	// 3. Invoke append_strings twice. Passing in recipe the first time and bucket_list the second time.
+	// outputToPage(recipe);
+	// outputToPage(bucket_list);
+
+	// 4. Refactor append_strings such that it takes two arguments: an array of strings, and a string representing the css selector of the elemtn into whic the strings should be appended (i.e. bucket_list may be appended into a #bucket_output div)
+	var outputToPage = function(array, id){
+		var i = 0;
+		while (i < array.length) {
+			$(id).append('<p>' + (i + 1) + ': ' + array[i] + '</p>');
+			i++
+		}
+	}
+	outputToPage(recipe, '#recipe_output');
+	outputToPage(bucket_list, '#bucket_list_output');
+</script>
+</body>
+</html>
