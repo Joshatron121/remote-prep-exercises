@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>Exercise 1</title>
+</head>
+<body>
+<div class="container">
+	<div class="city"></div>
+	<div class="current_temp"></div>
+	<div class="high_temp"></div>
+	<div class="low_temp"></div>
+	<div class="weather_conditions"></div>
+	<div class="wind_speed"></div>
+	<div class="sunrise_time"></div>
+	<div class="sunset_time"></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+var builder = '<div class="city"></div><div class="current_temp"></div><div class="high_temp"></div><div class="low_temp"></div><div class="weather_conditions"></div><div class="wind_speed"></div><div class="sunrise_time"></div><div class="sunset_time"></div>'
+// var dataSuccess = function(weather_data){
+//   $('.current_temp').append('Current Temperature: ' + weather_data.main.temp);
+
+//   $('.weather_conditions').append('Current Conditions: ' + weather_data.weather[0].description);
+//   $('.wind_speed').append('Wind Speed: ' + weather_data.wind.speed);
+//   $('.sunrise_time').append('Sunrise: ' + (new Date(weather_data.sys.sunrise * 1000)))
+//   $('.sunset_time').append('Sunset: ' + (new Date(weather_data.sys.sunset * 1000)))
+// };
+
+var forecastSuccess = function(weather_data, forecast_data){
+	console.log(weather_data);
+	console.log(forecast_data)
+	// $('.current_temp').append('Current Temperature: ' + weather_data.main.temp);
+	// $('.weather_conditions').append('Current Conditions: ' + weather_data.weather[0].description);
+	// $('.wind_speed').append('Wind Speed: ' + weather_data.wind.speed);
+	// $('.sunrise_time').append('Sunrise: ' + (new Date(weather_data.sys.sunrise * 1000)))
+	// $('.sunset_time').append('Sunset: ' + (new Date(weather_data.sys.sunset * 1000)))
+	// $('.city').append('City Name: ' + forecast_data.city.name);
+	// $('.high_temp').append('High Temperature: ' + forecast_data.list[currentDate.getDay()].temp.max);
+	// $('.low_temp').append('Low Temperature: ' + forecast_data.list[currentDate.getDay()].temp.min);
+}
+
+var currentDate = new Date();
+
+var weather_data = $.get('http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco&mode=json&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(weather_data);
+var forecast_data = $.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=San%20Francisco&mode=json&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(forecast_data);
+
+$.when(weather_data, forecast_data).done(forecastSuccess(weather_data, forecast_data))
+
+var d1 = $.Deferred();
+var d2 = $.Deferred();
+ 
+$.when( d1, d2 ).done(function ( v1, v2 ) {
+    console.log( v1 ); // "Fish"
+    console.log( v2 ); // "Pizza"
+});
+ 
+d1.resolve( "Fish" );
+d2.resolve( "Pizza" );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 5</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script>
+
+var numArray = [1, 2, 3, 4, 5];
+
+var doubler = function(number){
+	return number * 2;
+};
+
+// var superFunction = function(array, func){
+// 	_.each(array,function(num, index){
+// 		array[index] = func(array[index]);
+// 	});
+// };
+
+// superFunction(numArray, doubler);
+// console.log(numArray);
+
+var newArr = []
+var superFunction2 = function(array, func){
+	_.each(array, function(num, index){
+		newArr[index] = func(array[index]);
+	});
+};
+
+superFunction2(numArray, doubler);
+
+console.log(newArr);
+
+
+</script>
+</body>
+</html>

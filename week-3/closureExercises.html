@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closure Exercises</title>
+</head>
+<body>
+
+
+<script>
+
+	var nonsense = function(string) {
+		var blab = function() {
+			alert(string);
+		};
+		setTimeout(blab, 2000);
+	};
+
+	nonsense("test");
+
+</script>
+</body>
+</html>
+
+

@@ -67,15 +67,16 @@
 	// outputToPage(bucket_list);
 
 	// 4. Refactor append_strings such that it takes two arguments: an array of strings, and a string representing the css selector of the elemtn into whic the strings should be appended (i.e. bucket_list may be appended into a #bucket_output div)
-	var outputToPage = function(array, id){
+	var append_strings = function(array, id){
 		var i = 0;
 		while (i < array.length) {
 			$(id).append('<p>' + (i + 1) + ': ' + array[i] + '</p>');
 			i++
 		}
 	}
-	outputToPage(recipe, '#recipe_output');
-	outputToPage(bucket_list, '#bucket_list_output');
+	append_strings(recipe, '#recipe_output');
+	append_strings(bucket_list, '#bucket_list_output');
+	
 </script>
 </body>
 </html>

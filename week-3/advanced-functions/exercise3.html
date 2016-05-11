@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 3</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script>
+
+var fn1 = function() {
+	return "this should be the first value in results array";
+};
+
+var answer_collector = function(array){
+	var results_array = []
+	_.each(array, function(num, index){
+		results_array[index] = num();
+	});
+	return results_array;
+}
+
+console.log(answer_collector([fn1, function(){return "This should be the second value in results array"}]))
+</script>
+</body>
+</html>

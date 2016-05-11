@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closure Exercise 1</title>
+</head>
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+// var nonsense = function (string){
+// 	var blab = function (){
+// 		alert(string);
+// 	}
+// 	return blab;
+// }
+
+// var blabLater = nonsense("A string");
+
+// var blabAgainLater = nonsense("A different string"); 
+
+// var lastNameTrier = function(firstName) {
+// 	var nameConcat = function(lastName) {
+// 		console.log(firstName + ' ' + lastName)
+// 	}
+
+// 	return nameConcat
+// }
+
+// var firstNameFarmer = lastNameTrier('Farmer');
+
+// firstNameFarmer('Brown');
+// firstNameFarmer('Jane');
+// firstNameFarmer('Lyne')
+
+var nameArray = ['Josh','Kent','Duncan'];
+
+var checkAttendanceFunc = function(nameArr){
+ var resultArr = [];
+ for(var i = 0; i < nameArr.length; i++){
+   
+   resultArr.push(function(name, inc){
+   	return function(){
+   		console.log('Is', name[inc], 'present?', inc);
+   	}
+   }(nameArr, i))   
+ };
+ return resultArr;
+};
+
+var attendanceStore = checkAttendanceFunc(nameArray)
+
+for (var i = 0; i < attendanceStore.length; i++) {
+	console.log(attendanceStore[i]())
+}
+
+
+
+// EXTRA CREDIT] Write a function that takes another function as an argument and creates a version of the function that can only be called one time. Repeated calls to the modified function will have no effect, returning the value from the original call. How could you do this without using a closure? Is it even possible? How could you do this with a closure? Note: This original input function should not* have any parameters.
+
+
+
+</script>
+</body>
+</html>

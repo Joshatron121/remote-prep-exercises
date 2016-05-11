@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 4</title>
+</head>
+<body>
+
+<script>
+	var scrambled_poem = 'roses red are bacon cripsy i bacon love and is blue violets are';
+
+	// 1. Use .split(' ') on scrambled_poem and save the result as an array scrambled_array
+	var scrambled_array = scrambled_poem.split(' ');
+
+	// 2. Create a new array unscrambled_array
+	var unscrambled_array = [];
+
+	// 3. While the length of scrambled array is greater than 0, remove the FIRST and LAST value and add them to unscrambled_array
+
+	while (scrambled_array.length > 0) {
+		unscrambled_array.push(scrambled_array.shift());
+		unscrambled_array.push(scrambled_array.pop());
+	}
+
+	// 4. Turn the values in unscrambled poem into a string by using the arrays native .join(' ') method.
+	console.log(unscrambled_array);
+
+
+</script>
+</body>
+</html>
